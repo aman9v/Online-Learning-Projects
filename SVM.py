@@ -16,6 +16,8 @@ class SVM():
         self.kernel_type = kernel_type
         self.C = C
         self.epsilon = epsilon
+
+
     
     def fit(self, X, y):
         # Initialization
@@ -114,6 +116,7 @@ class SVM():
 def calc_acc(y, y_hat):
     label_pos = np.where(y_hat == 1)
     TP, TN = (0,0)
+    
     for each_i in range(len(label_pos)):
         TP = np.sum([ 1 for i,j in zip(y,y_hat) if y[i]==y_hat[j]])
     label_neg = np.where(y_hat == -1)
